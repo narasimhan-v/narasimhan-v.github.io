@@ -1,1 +1,14 @@
-theme: jekyll-theme-tactile
+title: Narasimhan V
+email: narasimhan14989@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+    Update your description for the site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: 
+github_username:  narasimhan-v
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
