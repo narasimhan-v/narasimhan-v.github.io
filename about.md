@@ -4,7 +4,7 @@ title: Narasimhan V
 permalink: /about/
 ---
 
-![](https://avatars0.githubusercontent.com/u/16101053?s=460&v=4)
+![](https://avatars0.githubusercontent.com/u/16101053?s=160&v=4)
 
 Working as Linux Test Engineer for IO at Linux Technology Center at IBM India.
 
