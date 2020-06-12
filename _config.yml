@@ -13,5 +13,3 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
-permalink: /blog/:year/:month/:day/:title
