@@ -25,8 +25,7 @@ There were only 2 ways of achieving that. **Avocado native** way, or **bash** wa
 
 ### Avocado native way ###
 Avocado supports running multiple tests, provided they have common options.
-```
-avocado run test1 test2
+```bash
 avocado run test1 test2 options
 ```
 But we can not provide separate options to each test.
@@ -122,14 +121,14 @@ Consider our sample.cfg.
 The yamls there are yaml2 and yaml5
 
 yaml2:
-```
+```yaml
 a: 1
 b:
 c: 3
 ```
 
 yaml5:
-```
+```yaml
 a: 1
 b:
 d: 4
@@ -137,7 +136,7 @@ e: "this is e"
 ```
 
 Our input file should look like:
-```
+```config
 [sample]
 a = 5
 e = "This is E"
@@ -153,14 +152,14 @@ So, when we run the suite, `./avocado-setup.py --run-suite host_sample --input-f
 we will have temporary yamls getting created in `/tmp/mux/` folder.
 
 /tmp/mux/yaml2:
-```
+```yaml
 a: 5
 b:
 c: 3
 ```
 
 /tmp/mux/yaml5:
-```
+```yaml
 a: 5
 b:
 d: 4
