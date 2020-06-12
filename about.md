@@ -1,3 +1,8 @@
+---
+layout: default
+title: About me
+permalink: /about/
+---
 
 ![](https://avatars0.githubusercontent.com/u/16101053?s=160&v=4)
 
