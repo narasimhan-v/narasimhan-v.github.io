@@ -78,7 +78,7 @@ Very simple:
 07:51:40 INFO    : Installing optional plugin: varianter_yaml_to_mux
 07:51:41 INFO    : Removing temporary mux dir
 ```
-Read the documentation for more understanding.
+Read the [documentation](https://github.com/open-power-host-os/tests/blob/master/README.md) for more understanding.
 
 ### Creating a Test Suite ###
 
@@ -101,12 +101,15 @@ References of testsuite and test config are the same, in this context.
 ### Running a Test Suite ###
 
 `./avocado-setup.py --run-suite <type>_<test_suite_file_name>`
+
 Multiple test suites are run like:
-./avocado-setup.py --run-suite <type1>_<test_suite_file_name1>,<type2>_<test_suite_file_name2>,..`
+
+`./avocado-setup.py --run-suite <type1>_<test_suite_file_name1>,<type2>_<test_suite_file_name2>,..`
+
 In our case, it would be `./avocado-setup.py --run-suite host_sample`
 
 
-### Providing inputs to the yaml - The dynamism in tests ###
+### Providing inputs to the yaml ###
 
 There is a concept of input file, which is in a config file format.
 Use this option to specify input file for custom yaml file values for host tests.
