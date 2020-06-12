@@ -2,7 +2,7 @@
 
 We explore how to manage your nvme device here.
 
-## NVMe Overview ##
+### NVMe Overview ###
 
 NVM Express is a scalable host controller interface designed to address the needs of Enterprise, Data Center and Client systems that utilize PCI Express® (PCIe®) based solid state drives.
 NVM Express specifications are owned and maintained by [NVM Express, Inc.](https://nvmexpress.org)
@@ -10,7 +10,7 @@ NVM Express specifications are owned and maintained by [NVM Express, Inc.](https
 NVMe device is managed by a user space tooling, [nvme-cli](https://github.com/linux-nvme/nvme-cli) for Linux.
 Continue reading to find out how to manage and start using your NVMe device, using `nvme-cli`.
 
-## What is nvme namespace ##
+### What is nvme namespace ###
 
 Let us not get bored by giving information that can be found elsewhere easily.
 NVMe device is addressed as `nvmeX` in linux, found at `/dev`.
@@ -33,7 +33,7 @@ Node             SN                   Model                                    N
 /dev/nvme0n2     SN                   1.6TB NVMe Gen4 U.2 SSD                  1          25.00  GB /  25.00  GB      4 KiB +  0 B   FW Version
 ```
 
-## Basics commands of namespaces of nvme device ##
+### Basic commands of nvme-cli to control the namespaces of nvme device ###
 
 To find capacity of an NVMe device:
 ```
@@ -65,7 +65,7 @@ So, max number of blocks the device supports is:
 ```
 
 
-## Managing namespaces of nvme device ##
+### Managing namespaces of nvme device ###
 
 We need to know the controller ID of the nvme device
 ```
