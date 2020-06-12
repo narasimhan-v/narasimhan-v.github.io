@@ -8,4 +8,4 @@ permalink: /about/
 
 Working as Linux Test Engineer on IO at Linux Technology Center at IBM India.
 
-Open-Source contributor, [Automate](https://github.com/narasimhan-v) Linux Tests, and Enable CI to Agile S{D,T}LC.
+Open source contributor, [Automate](https://github.com/narasimhan-v) Linux Tests, and Enable CI / CD / CR .
