@@ -27,10 +27,10 @@ The block devices can be viewed using the command `nvme list`, as below:
 
 ```
 # nvme list
-Node             SN                   Model                                    Namespace Usage                      Format           FW Rev  
----------------- -------------------- ---------------------------------------- --------- -------------------------- ---------------- --------
-/dev/nvme0n1     SN                   1.6TB NVMe Gen4 U.2 SSD                  1          25.00  GB /  25.00  GB      4 KiB +  0 B   FW Version
-/dev/nvme0n2     SN                   1.6TB NVMe Gen4 U.2 SSD                  1          25.00  GB /  25.00  GB      4 KiB +  0 B   FW Version
+Node             SN     Model                       Namespace Usage                      Format         FW Rev  
+---------------- ------ --------------------------- --------- -------------------------- -------------- ----------
+/dev/nvme0n1     SN     1.6TB NVMe Gen4 U.2 SSD     1         25.00  GB /  25.00  GB     4 KiB +  0 B   FW Version
+/dev/nvme0n2     SN     1.6TB NVMe Gen4 U.2 SSD     2         25.00  GB /  25.00  GB     4 KiB +  0 B   FW Version
 ```
 
 ### Basic commands of nvme-cli to control the namespaces of nvme device ###
@@ -87,9 +87,9 @@ create-ns: Success, created nsid:1
 attach-ns: Success, nsid:1
 
 # nvme list
-Node             SN                   Model                                    Namespace Usage                      Format           FW Rev  
----------------- -------------------- ---------------------------------------- --------- -------------------------- ---------------- --------
-/dev/nvme0n1     SN                   1.6TB NVMe Gen4 U.2 SSD                  1          25.00  GB /  25.00  GB      4 KiB +  0 B   FW Version
+Node             SN     Model                       Namespace Usage                      Format         FW Rev  
+---------------- ------ --------------------------- --------- -------------------------- -------------- ----------
+/dev/nvme0n1     SN     1.6TB NVMe Gen4 U.2 SSD     1         25.00  GB /  25.00  GB     4 KiB +  0 B   FW Version
 
 ```
 We can do this multiple times, varying the namespace id in the `attach-ns command`
