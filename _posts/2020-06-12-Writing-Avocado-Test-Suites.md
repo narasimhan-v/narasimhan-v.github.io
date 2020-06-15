@@ -11,7 +11,7 @@ It is not just running multiple tests, but making them run in a way that is
 2. Controlled by what the other tests do to the system
 3. Handling various options that can be specific to each test
 
-I used the word orchestrating, so that we can compare this with a various musicians in a music orchestra or various dancers in a dance group choreographed.
+I used the word orchestrating, so that we can compare this with various musicians in a music orchestra or various dancers in a dance group choreographed.
 
 ***Test Suite is not just running multiple tests, but much more than that.***
 
@@ -43,13 +43,13 @@ Which brings us to the conclusion, these ways are not good enough for Test Suite
 
 ## Avocado Test Suites ##
 
-[Avocado Tests Suite](https://github.com/open-power-host-os/tests) is a project that orchestrates avocado tests.
+[Avocado Tests Suite](https://github.com/open-power-host-os/tests) is a project that creates and runs avocado test suites.
 
-This is a highly capable project that has many of the much needed features for avocado test orchestration.
+This is a highly capable project that has many of the much needed features for a test suite based on avocado.
 
 To name a few:
 * Support for both [host](https://github.com/avocado-framework-tests/avocado-misc-tests) and [guest tests](https://github.com/avocado-framework/avocado-vt)
-* True orchestration - run a test multiple times, maintain order of tests
+* True orchestration - run a test multiple times, maintain order of tests, etc.
 * Result summary for every on test suite run
 * Run multiple test suites at once
 * Individual test case validation and invalidation
