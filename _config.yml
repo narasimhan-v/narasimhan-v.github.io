@@ -8,9 +8,6 @@ twitter_username: NarasimhanV
 github_username:  narasimhan-v
 linkedin_username: narasimhanv
 
-page-col: "#FFFFFF"
-footer-text-col: "#777777"
-title-separator: "-"
 
 # Build settings
 markdown: kramdown
