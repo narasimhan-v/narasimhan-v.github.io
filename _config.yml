@@ -9,6 +9,7 @@ github_username:  narasimhan-v
 linkedin_username: narasimhanv
 
 page-col: "#FFFFFF"
+footer-text-col: "#777777"
 
 # Build settings
 markdown: kramdown
