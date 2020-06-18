@@ -12,12 +12,14 @@ The logging capabilities of avocado are quite extensive.
 All of the above are captured into results folder. They are defined in avocado.conf, and can be customised.
 
 ```
-# ls latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/pre/
+# cd latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/
+
+# ls pre/
  cmdline              'df -mP'    'gcc --version'   interrupts      lscpu          modules                    partitions         slabinfo    version
  cpuinfo               dmesg       hostname        'ip link'       'lspci -vvnn'   mounts                     scaling_governor  'uname -a'
  current_clocksource  'fdisk -l'  'ifconfig -a'    'ld --version'   meminfo       'numactl --hardware show'   sched_features     uptime
 
-# ls latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/post/
+# ls post/
  cmdline              'df -mP'    'gcc --version'   interrupts     'ld --version'   meminfo  'numactl --hardware show'   sched_features   uptime
  cpuinfo               dmesg       hostname        'ip link'        lscpu           modules   partitions                 slabinfo         version
  current_clocksource  'fdisk -l'  'ifconfig -a'     journalctl.gz  'lspci -vvnn'    mounts    scaling_governor          'uname -a'
