@@ -12,12 +12,12 @@ The logging capabilities of avocado are quite extensive.
 All of the above are captured into results folder. They are defined in avocado.conf, and can be customised.
 
 ```
-# ls /root/avocado/job-results/latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/pre/
+# ls latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/pre/
  cmdline              'df -mP'    'gcc --version'   interrupts      lscpu          modules                    partitions         slabinfo    version
  cpuinfo               dmesg       hostname        'ip link'       'lspci -vvnn'   mounts                     scaling_governor  'uname -a'
  current_clocksource  'fdisk -l'  'ifconfig -a'    'ld --version'   meminfo       'numactl --hardware show'   sched_features     uptime
 
-# ls /root/avocado/job-results/latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/post/
+# ls latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/post/
  cmdline              'df -mP'    'gcc --version'   interrupts     'ld --version'   meminfo  'numactl --hardware show'   sched_features   uptime
  cpuinfo               dmesg       hostname        'ip link'        lscpu           modules   partitions                 slabinfo         version
  current_clocksource  'fdisk -l'  'ifconfig -a'     journalctl.gz  'lspci -vvnn'    mounts    scaling_governor          'uname -a'
@@ -26,7 +26,7 @@ All of the above are captured into results folder. They are defined in avocado.c
 
 They are defined in avocado.conf, and can be customised.
 
-```txt
+```
 [sysinfo.collectibles]
 # File with list of commands that will be executed and have their output collected
 commands = etc/avocado/sysinfo/commands
