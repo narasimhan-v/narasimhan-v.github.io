@@ -99,3 +99,7 @@ sys	0m1.303s
 # du -sh /root/avocado/job-results/latest/
 276K	/root/avocado/job-results/latest/
 ```
+
+### Proposed Optimisation ###
+
+There is a proposed optimisation, which should be ready soon: [Collecting certain extra logs in case of test failure](https://github.com/avocado-framework/avocado/issues/3567)
