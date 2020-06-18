@@ -26,7 +26,7 @@ All of the above are captured into results folder. They are defined in avocado.c
 
 They are defined in avocado.conf, and can be customised.
 
-```
+```txt
 [sysinfo.collectibles]
 # File with list of commands that will be executed and have their output collected
 commands = etc/avocado/sysinfo/commands
