@@ -15,12 +15,14 @@ All of the above are captured into results folder. They are defined in avocado.c
 # cd latest/test-results/2-examples_tests_failtest.py_FailTest.test/sysinfo/
 
 # ls pre/
+
  cmdline              'df -mP'    'gcc --version'   interrupts      lscpu          modules                    partitions         slabinfo    version
  cpuinfo               dmesg       hostname        'ip link'       'lspci -vvnn'   mounts                     scaling_governor  'uname -a'
  current_clocksource  'fdisk -l'  'ifconfig -a'    'ld --version'   meminfo       'numactl --hardware show'   sched_features     uptime
 
 # ls post/
- cmdline              'df -mP'    'gcc --version'   interrupts     'ld --version'   meminfo  'numactl --hardware show'   sched_features   uptime
+
+cmdline              'df -mP'    'gcc --version'   interrupts     'ld --version'   meminfo  'numactl --hardware show'   sched_features   uptime
  cpuinfo               dmesg       hostname        'ip link'        lscpu           modules   partitions                 slabinfo         version
  current_clocksource  'fdisk -l'  'ifconfig -a'     journalctl.gz  'lspci -vvnn'    mounts    scaling_governor          'uname -a'
 
@@ -79,7 +81,7 @@ This behavior is controlled by a parameter in avocado.conf: sysinfo.collect.opti
 optimize = False
 ```
 
-By this, we are looking atmost 35 % less disk space consumption in results folder per test, with less than 1s extra processing time.
+By this, we are looking atmost **35 % less disk space consumption** in results folder per test, with less than **1s extra processing time**.
 
 Without this optimisation:
 ```
