@@ -1,4 +1,4 @@
-# Importance of Log capturing #
+### Importance of Log capturing ###
 
 Log capturing is very important when we run tests. It helps us to understand how the system behaves. More so in case of test failures, where we need to log certain files to understand why.
 
