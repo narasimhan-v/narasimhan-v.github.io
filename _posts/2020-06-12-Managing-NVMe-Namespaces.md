@@ -92,8 +92,10 @@ Node             SN     Model                       Namespace Usage             
 /dev/nvme0n1     SN     1.6TB NVMe Gen4 U.2 SSD     1         25.00  GB /  25.00  GB     4 KiB +  0 B   FW Version
 
 ```
-We can do this multiple times, varying the namespace id in the `attach-ns command`
 
+We can do this multiple times, by running `create-ns` multiple times and varying the namespace id in the `attach-ns command`
+
+Check out a bash script to do this [here](/resources/nvme_max_namespaces.sh)
 
 Now, this namespace can be used like any block device.
 ```
