@@ -114,8 +114,8 @@ This feature gives us the option to collect data like sosreport and supportconfi
 They are configured via avocado.conf:
 ```
 [sysinfo.collectibles]
-commands = etc/avocado/sysinfo/fail_commands
-files = etc/avocado/sysinfo/fail_files
+fail_commands = etc/avocado/sysinfo/fail_commands
+fail_files = etc/avocado/sysinfo/fail_files
 ```
 
 fail_commands file contents:
@@ -134,17 +134,15 @@ JOB LOG    : /root/sim/tests/results/job-2020-07-01T14.03-ac6e740/job.log
 RESULTS    : PASS 1 | ERROR 0 | FAIL 1 | SKIP 0 | WARN 0 | INTERRUPT 0 | CANCEL 0
 JOB HTML   : /root/sim/tests/results/job-2020-07-01T14.03-ac6e740/results.html
 JOB TIME   : 122.93 s
-```
 
-```
+
 # ls 1-avocado_examples_tests_passtest.py_PassTest.test/sysinfo/post/
 'ifconfig -a'   interrupts   journalctl.gz   'multipath -ll'
 
 # ls 2-avocado_examples_tests_failtest.py_FailTest.test/sysinfo/post/
 'ifconfig -a'   interrupts   journalctl.gz   'multipath -ll'   'sosreport --batch --tmp-dir results'
-```
 
-```
+
 # ls -lh results
 -rw-------. 1 root root 44M Jul  1 14:05 results/sosreport-ltczzj3-lp2-2020-07-01-yasrjfy.tar.xz
 ```
