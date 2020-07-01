@@ -51,7 +51,7 @@ files:
 More info at official [Avocado Sysinfo documentation](https://avocado-framework.readthedocs.io/en/80.0/guides/user/chapters/introduction.html?highlight=sysinfo#sysinfo-collection)
 
 
-### Optimisations ###
+### Optimisation ###
 
 There was a recent optimisation to this, wherein we log only those changed files and commands in post.
 
@@ -81,7 +81,7 @@ This behavior is controlled by a parameter in avocado.conf: sysinfo.collect.opti
 optimize = False
 ```
 
-By this, we are looking atmost **35 % less disk space consumption** in results folder per test, with less than **1s extra processing time**.
+By this, we are looking atmost **35 % less disk space consumption** in results folder per test, depending on the number of sysinfo collectibles configured, with less than **1s extra processing time**.
 
 Without this optimisation:
 ```
@@ -104,6 +104,47 @@ sys	0m1.303s
 276K	/root/avocado/job-results/latest/
 ```
 
-### Proposed Optimisation ###
+### Sysinfo in case of only a test failure ###
 
-There is a proposed optimisation, which should be ready soon: [Collecting certain extra logs in case of test failure](https://github.com/avocado-framework/avocado/issues/3567)
+There is also another feature which makes it possible to collect certain sysinfo logs only in case of test failure.
+
+This feature gives us the option to collect data like sosreport and supportconfig, that too in case of test failure only.
+
+
+They are configured via avocado.conf:
+```
+[sysinfo.collectibles]
+commands = etc/avocado/sysinfo/fail_commands
+files = etc/avocado/sysinfo/fail_files
+```
+
+fail_commands file contents:
+```
+sosreport --batch --tmp-dir results
+supportconfig -t results
+```
+
+
+```
+# avocado run avocado/examples/tests/passtest.py avocado/examples/tests/failtest.py
+JOB ID     : ac6e7400acbec69f079bd5ab446faa391e2758a9
+JOB LOG    : /root/sim/tests/results/job-2020-07-01T14.03-ac6e740/job.log
+ (1/2) avocado/examples/tests/passtest.py:PassTest.test: PASS (6.24 s)
+ (2/2) avocado/examples/tests/failtest.py:FailTest.test: FAIL: This test is supposed to fail (110.23 s)
+RESULTS    : PASS 1 | ERROR 0 | FAIL 1 | SKIP 0 | WARN 0 | INTERRUPT 0 | CANCEL 0
+JOB HTML   : /root/sim/tests/results/job-2020-07-01T14.03-ac6e740/results.html
+JOB TIME   : 122.93 s
+```
+
+```
+# ls 1-avocado_examples_tests_passtest.py_PassTest.test/sysinfo/post/
+'ifconfig -a'   interrupts   journalctl.gz   'multipath -ll'
+
+# ls 2-avocado_examples_tests_failtest.py_FailTest.test/sysinfo/post/
+'ifconfig -a'   interrupts   journalctl.gz   'multipath -ll'   'sosreport --batch --tmp-dir results'
+```
+
+```
+# ls -lh results
+-rw-------. 1 root root 44M Jul  1 14:05 results/sosreport-ltczzj3-lp2-2020-07-01-yasrjfy.tar.xz
+```
