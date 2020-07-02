@@ -53,7 +53,9 @@ More info at official [Avocado Sysinfo documentation](https://avocado-framework.
 
 ### Optimisation ###
 
-There was a recent optimisation to this, wherein we log only those changed files and commands in post.
+The default behaviour is to log all the sysinfo collectibles in both pre and post.
+
+There was a recent optimisation to the default behaviour, wherein we log only those changed files and commands in post.
 
 If there are 25 files and commands, and 10 of them are unchanged during the test, then it is unnecessary to log them. Also, it is time consuming to locate which files changed, while debugging. So, we log only the 15 files and commands which are changed.
 
@@ -78,7 +80,7 @@ This behavior is controlled by a parameter in avocado.conf: sysinfo.collect.opti
 ```
 [sysinfo.collect]
 # Optimize sysinfo collection by removing duplicates between pre and post
-optimize = False
+optimize = True
 ```
 
 By this, we are looking atmost **35 % less disk space consumption** in results folder per test, depending on the number of sysinfo collectibles configured, with less than **1s extra processing time**.
@@ -109,7 +111,9 @@ sys	0m1.303s
 There is also another feature which makes it possible to collect certain sysinfo logs only in case of test failure.
 
 This feature gives us the option to collect data like sosreport and supportconfig, that too in case of test failure only.
+This helps running the test unattended and not worry about collecting logs as soon as a failure occurs.
 
+We can configure them as commands (fail_commands) and files (fail_files) to be collected.
 
 They are configured via avocado.conf:
 ```
@@ -118,10 +122,10 @@ fail_commands = etc/avocado/sysinfo/fail_commands
 fail_files = etc/avocado/sysinfo/fail_files
 ```
 
-fail_commands file contents:
+fail_commands:
 ```
-sosreport --batch --tmp-dir results
-supportconfig -t results
+mkdir -p results && sosreport --batch --tmp-dir results
+supportconfig -R results
 ```
 
 
@@ -137,10 +141,10 @@ JOB TIME   : 122.93 s
 
 
 # ls 1-avocado_examples_tests_passtest.py_PassTest.test/sysinfo/post/
-'ifconfig -a'   interrupts   journalctl.gz   'multipath -ll'
+'ifconfig -a'   journalctl.gz   'multipath -ll'
 
 # ls 2-avocado_examples_tests_failtest.py_FailTest.test/sysinfo/post/
-'ifconfig -a'   interrupts   journalctl.gz   'multipath -ll'   'sosreport --batch --tmp-dir results'
+'ifconfig -a'   journalctl.gz   'multipath -ll'   'mkdir -p results && sosreport --batch --tmp-dir results'
 
 
 # ls -lh results
