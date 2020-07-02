@@ -40,8 +40,9 @@ files = etc/avocado/sysinfo/files
 profilers = etc/avocado/sysinfo/profilers
 ```
 
-files:
+
 ```
+# cat etc/avocado/sysinfo/files
 /proc/cmdline
 /proc/mounts
 /proc/pci
@@ -122,8 +123,9 @@ fail_commands = etc/avocado/sysinfo/fail_commands
 fail_files = etc/avocado/sysinfo/fail_files
 ```
 
-fail_commands:
+
 ```
+# cat etc/avocado/sysinfo/fail_files
 mkdir -p results && sosreport --batch --tmp-dir results
 supportconfig -R results
 ```
