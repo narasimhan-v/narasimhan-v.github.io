@@ -11,6 +11,5 @@ linkedin_username: narasimhanv
 # Build settings
 markdown: kramdown
 theme: minima
-remote_theme: chrisrhymes/bulma-clean-theme
 plugins:
   - jekyll-feed
