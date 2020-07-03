@@ -11,7 +11,7 @@ linkedin_username: narasimhanv
 # Build settings
 markdown: kramdown
 # theme: jekyll-theme-tactile
-theme: jekyll-theme-slate
+theme: minima
 
 plugins:
   - jekyll-feed
