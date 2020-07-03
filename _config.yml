@@ -11,5 +11,7 @@ linkedin_username: narasimhanv
 # Build settings
 markdown: kramdown
 theme: minima
+remote_theme: fongandrew/hydeout
+
 plugins:
   - jekyll-feed
