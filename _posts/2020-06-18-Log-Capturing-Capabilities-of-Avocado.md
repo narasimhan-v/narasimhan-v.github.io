@@ -1,5 +1,7 @@
+---
 layout: post
 title: "Log Capturing Capabilities Of Avocado"
+---
 
 ### Importance of Log capturing ###
 
