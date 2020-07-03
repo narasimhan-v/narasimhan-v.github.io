@@ -10,7 +10,7 @@ linkedin_username: narasimhanv
 
 # Build settings
 markdown: kramdown
-theme: slate
+theme: jekyll-theme-tactile
 
 plugins:
   - jekyll-feed
