@@ -136,11 +136,10 @@ Notice the environment variable `AVOCADO_SYSINFODIR`. We can use it to place fil
 ```
 # avocado run avocado/examples/tests/passtest.py avocado/examples/tests/failtest.py
 JOB ID     : ac6e7400acbec69f079bd5ab446faa391e2758a9
-JOB LOG    : /root/sim/tests/results/job-2020-07-01T14.03-ac6e740/job.log
+JOB LOG    : /root/sim/tests/results/job-2020-07-11T14.03-ac6e740/job.log
  (1/2) avocado/examples/tests/passtest.py:PassTest.test: PASS (6.24 s)
  (2/2) avocado/examples/tests/failtest.py:FailTest.test: FAIL: This test is supposed to fail (110.23 s)
 RESULTS    : PASS 1 | ERROR 0 | FAIL 1 | SKIP 0 | WARN 0 | INTERRUPT 0 | CANCEL 0
-JOB HTML   : /root/sim/tests/results/job-2020-07-01T14.03-ac6e740/results.html
 JOB TIME   : 122.93 s
 
 
