@@ -127,9 +127,10 @@ fail_files = etc/avocado/sysinfo/fail_files
 
 ```
 # cat etc/avocado/sysinfo/fail_files
-mkdir -p results && sosreport --batch --tmp-dir results
-supportconfig -R results
+sosreport --batch --tmp-dir $AVOCADO_SYSINFODIR
+supportconfig -R $AVOCADO_SYSINFODIR
 ```
+Notice the environment variable `AVOCADO_SYSINFODIR`. We can use it to place files generated on to the sysinfo folder.
 
 
 ```
@@ -147,9 +148,6 @@ JOB TIME   : 122.93 s
 'ifconfig -a'   journalctl.gz   'multipath -ll'
 
 # ls 2-avocado_examples_tests_failtest.py_FailTest.test/sysinfo/post/
-'ifconfig -a'   journalctl.gz   'multipath -ll'   'mkdir -p results && sosreport --batch --tmp-dir results'
-
-
-# ls -lh results
--rw-------. 1 root root 44M Jul  1 14:05 results/sosreport-ltczzj3-lp2-2020-07-01-yasrjfy.tar.xz
+'ifconfig -a'   'multipath -ll'                                     sosreport-ltczzj3-lp2-2020-07-11-epsjncn.tar.xz
+journalctl.gz   'sosreport --batch --tmp-dir $AVOCADO_SYSINFODIR'   sosreport-ltczzj3-lp2-2020-07-11-epsjncn.tar.xz.md5
 ```
