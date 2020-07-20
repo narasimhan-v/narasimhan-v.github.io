@@ -50,7 +50,7 @@ profilers = etc/avocado/sysinfo/profilers
 ```
 
 
-More info at official [Avocado Sysinfo documentation](https://avocado-framework.readthedocs.io/en/80.0/guides/user/chapters/introduction.html?highlight=sysinfo#sysinfo-collection)
+More info at official [Avocado Sysinfo documentation](https://avocado-framework.readthedocs.io/en/latest/guides/user/chapters/introduction.html#sysinfo-collection)
 
 
 ### Optimisation ###
