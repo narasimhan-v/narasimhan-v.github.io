@@ -9,7 +9,6 @@ github_username:  narasimhan-v
 linkedin_username: narasimhanv
 
 # Build settings
-gem "kramdown", ">= 2.3.0"
 markdown: kramdown
 # theme: jekyll-theme-tactile
 theme: minima
