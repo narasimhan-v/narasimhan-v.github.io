@@ -80,7 +80,7 @@ This is useful when a test is not supported or has a known bug on some environme
 
 
 
-#### **Examples 3 and 4** ####
+#### **Examples 3, 4 and 5** ####
 
 ```
 avocado-misc-tests/io/disk/htx_block_devices.py:HtxTest.test_start avocado-misc-tests/io/disk/htx_block_devices.py.data/htx_block_devices.yaml
@@ -104,6 +104,19 @@ avocado-misc-tests/io/disk/htx_block_devices.py avocado-misc-tests/io/disk/htx_b
 avocado-misc-tests/io/disk/softwareraid.py avocado-misc-tests/io/disk/softwareraid.py.data/softwareraid_cleanup.yaml
 ```
 
+```
+avocado-misc-tests/io/net/bonding.py:Bonding.test_setup avocado-misc-tests/io/net/bonding.py.data/bonding_single.yaml
+avocado-misc-tests/io/net/htx_nic_devices.py:HtxNicTest.test_start avocado-misc-tests/io/net/htx_nic_devices.py.data/htx_nic_devices.yaml
+avocado-misc-tests/io/net/htx_nic_devices.py:HtxNicTest.test_check avocado-misc-tests/io/net/htx_nic_devices.py.data/htx_nic_devices.yaml
+avocado-misc-tests/io/net/network_test.py:NetworkTest.test_gro avocado-misc-tests/io/net/network_test.py.data/network_test.yaml
+avocado-misc-tests/io/net/network_test.py:NetworkTest.test_lro avocado-misc-tests/io/net/network_test.py.data/network_test.yaml
+avocado-misc-tests/io/net/network_test.py:NetworkTest.test_promisc avocado-misc-tests/io/net/network_test.py.data/network_test.yaml
+avocado-misc-tests/io/net/htx_nic_devices.py:HtxNicTest.test_check avocado-misc-tests/io/net/htx_nic_devices.py.data/htx_nic_devices.yaml
+avocado-misc-tests/io/net/htx_nic_devices.py:HtxNicTest.test_stop avocado-misc-tests/io/net/htx_nic_devices.py.data/htx_nic_devices.yaml
+avocado-misc-tests/io/net/bonding.py:Bonding.test_cleanup avocado-misc-tests/io/net/bonding.py.data/bonding_single.yaml
+```
+
 We also have some tests in avocado which are split into subtests in such a way that there is a start and stop, or, create and delete in those tests.
-With that, we can have some tests run in background while others are run in foreground (not exactly, but for explanation purposes)
-We can also have some device created on which other tests are run (raid, bond, etc)
+With that, we can have some tests run in background while others are run in foreground (not exactly, but for explanation purposes).
+We can also have some device created on which other tests are run (raid, bond, etc).
+Or even a combination of both.
