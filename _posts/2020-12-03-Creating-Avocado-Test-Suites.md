@@ -2,7 +2,7 @@
 
 We will explore the different ways to create Host Test Suites for avocado tests, via [Avocado Tests Suite](https://github.com/open-power-host-os/tests)
 
-## **What is a Test Suite ?** ##
+# **What is a Test Suite ?** #
 
 A way of defining that is, orchestrating multiple tests to run in a way that we want to.
 We have many different ways of creating such a test suite. Some of the useful ways we have support for are:
@@ -12,6 +12,7 @@ We have many different ways of creating such a test suite. Some of the useful wa
 3. Running a sub-test from an avocado test which consists of multiple tests
 4. Not running a test in a particular environment
 5. Having some tests run in background (done by writing avocado test differently)
+6. Handling additional parameters for indicidual tests
 
 We have some examples which explains each of these below.
 
@@ -117,6 +118,23 @@ avocado-misc-tests/io/net/bonding.py:Bonding.test_cleanup avocado-misc-tests/io/
 ```
 
 We also have some tests in avocado which are split into subtests in such a way that there is a start and stop, or, create and delete in those tests.
+
 With that, we can have some tests run in background while others are run in foreground (not exactly, but for explanation purposes).
+
 We can also have some device created on which other tests are run (raid, bond, etc).
+
 Or even a combination of both.
+
+#### **Example 6:** ####
+
+```
+avocado-misc-tests/memory/ndctl_selftest.py "--keep-tmp on"
+avocado-misc-tests/memory/ndctl.py avocado-misc-tests/memory/ndctl.py.data/ndctl.yaml "--mux-filter-only /run/config/version/distro --mux-filter-out /run/config/mode_types -d"
+avocado-misc-tests/fs/xfstests.py avocado-misc-tests/fs/xfstests.py.data/nvdimm.yaml "-d"
+avocado-misc-tests/fs/xfstests.py avocado-misc-tests/fs/xfstests.py.data/nvdimm_log.yaml "-d"
+avocado-misc-tests/io/disk/fiotest.py avocado-misc-tests/io/disk/fiotest.py.data/fio-pmem.yaml
+```
+
+We have support for additional arguments for a test suite for a long time now. And recently individual test support also was enbled.
+
+It can be used as the above example.
