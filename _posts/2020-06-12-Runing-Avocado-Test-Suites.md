@@ -13,7 +13,7 @@ It is not just running multiple tests, but making them run in a way that is
 
 I used the word orchestrating, so that we can compare this with various musicians in a music orchestra or various dancers in a dance group choreographed.
 
-***Test Suite is not just running multiple tests, but much more than that.***
+***Test Suite is not just about running multiple tests, but much more than that.***
 
 Please get accustomed to [Avocado basics - prerequisite](#basics-of-avocado---prerequisites)
 
