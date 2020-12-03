@@ -20,7 +20,7 @@ The host tests are written in files placed in the directory `config/tests/host/`
 The order in which we write the tests in the cfg file is the same order in which the tests are run.
 
 
-#### **Example 1** ####
+#### **Example 1:** ####
 
 Config file
 ```txt
@@ -58,9 +58,9 @@ host_io_nvme_fvt_nvmetest_NVMeTest_testformatnamespace_nvmetest.4           Run 
 
 These methods are useful when a test behaves differently based on when / how often it is run or depends on the tests run before it.
 
-When the same test is run more than once, the iteration of it is appended to the test name, and is displayed in the results as below.
+When the same test is run more than once, the iteration of it is appended to the test name, and is displayed in the results as above..
 
-#### **Example 2** ####
+#### **Example 2:** ####
 
 There are environments defined in the [no_run_tests file](https://github.ibm.com/ltctest/avocado-fvt-wrapper/blob/master/config/wrapper/no_run_tests.conf).
 
@@ -80,7 +80,7 @@ This is useful when a test is not supported or has a known bug on some environme
 
 
 
-#### **Examples 3, 4 and 5** ####
+#### **Examples 3, 4 and 5:** ####
 
 ```
 avocado-misc-tests/io/disk/htx_block_devices.py:HtxTest.test_start avocado-misc-tests/io/disk/htx_block_devices.py.data/htx_block_devices.yaml
