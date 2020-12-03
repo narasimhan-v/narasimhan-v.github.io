@@ -23,7 +23,7 @@ All of the above are captured into results folder. They are defined in avocado.c
 
 # ls post/
 
-cmdline              'df -mP'    'gcc --version'   interrupts     'ld --version'   meminfo  'numactl --hardware show'   sched_features   uptime
+ cmdline              'df -mP'    'gcc --version'   interrupts     'ld --version'   meminfo  'numactl --hardware show'   sched_features   uptime
  cpuinfo               dmesg       hostname        'ip link'        lscpu           modules   partitions                 slabinfo         version
  current_clocksource  'fdisk -l'  'ifconfig -a'     journalctl.gz  'lspci -vvnn'    mounts    scaling_governor          'uname -a'
 
