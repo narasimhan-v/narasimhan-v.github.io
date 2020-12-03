@@ -75,7 +75,8 @@ tests =
 [norun_distro2_pHyp]
 tests =avocado-misc-tests/io/pci/pci_hotplug.py avocado-misc-tests/io/pci/pci_hotplug.py.data/pci_hotplug.yaml
 ```
-Note: Even partial matches are supported here through pattern matching.
+
+> **_NOTE:_** Even partial matches are supported here through pattern matching.
 
 This is useful when a test is not supported or has a known bug on some environments.
 
