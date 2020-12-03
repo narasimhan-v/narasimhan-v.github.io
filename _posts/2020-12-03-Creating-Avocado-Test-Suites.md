@@ -61,6 +61,8 @@ There are environments defined in the [no_run_tests file](https://github.ibm.com
 
 They can be used to specify tests which we have in the cfg files, but do not want to run on specific environments.
 
+Note: Even partial matches are supported here through pattern matching.
+
 This is useful when a test is not supported or has a known bug on some environments.
 
 ### Having some tests run in background (done by writing avocado test differently) ###
