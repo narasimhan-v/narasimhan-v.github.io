@@ -1,4 +1,4 @@
-# **Creating Avocado Test Suites** #
+# **Creating Avocado Host Test Suites** #
 
 We will explore the different ways to create Host Test Suites for avocado tests, via [Avocado Tests Suite](https://github.com/open-power-host-os/tests)
 
