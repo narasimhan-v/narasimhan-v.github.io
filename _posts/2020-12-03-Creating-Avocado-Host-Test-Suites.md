@@ -7,18 +7,18 @@ We will explore the different ways to create Host Test Suites for avocado tests,
 A way of defining that is, orchestrating multiple tests to run in a way that we want to.
 We have many different ways of creating such a test suite. Some of the useful ways we have support for are:
 
-1. Running the same test multiple times
-2. Running the same test multiple times, each at a different time in the test suite
+1. Running the same test multiple times, continuously
+2. Running the same test multiple times, each at different instances in the test suite
 3. Running a sub-test from an avocado test which consists of multiple tests
 4. Not running a test in a particular environment
 5. Having some tests run in background (done by writing avocado test differently)
-6. Handling additional parameters for indicidual tests
+6. Handling additional parameters for individual tests
 
 We have some examples which explains each of these below.
 
 The host tests are written in files placed in the directory `config/tests/host/` with the filetype as cfg (ending with .cfg).
 
-The order in which we write the tests in the cfg file is the same order in which the tests are run.
+The tests are run sequentially in the order provided in the cfg file.
 
 
 #### **Example 1:** ####
@@ -120,7 +120,12 @@ avocado-misc-tests/io/net/bonding.py:Bonding.test_cleanup avocado-misc-tests/io/
 
 We also have some tests in avocado which are split into subtests in such a way that there is a start and stop, or, create and delete in those tests.
 
-With that, we can have some tests run in background while others are run in foreground (not exactly, but for explanation purposes).
+With that, we can have tests run in parallel / background. For example:
+```
+Test1_start
+Test2
+Test1_end
+```
 
 We can also have some device created on which other tests are run (raid, bond, etc).
 
