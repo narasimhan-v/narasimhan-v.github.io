@@ -69,9 +69,8 @@ So, max number of blocks the device supports is:
 
 We need to know the controller ID of the nvme device
 ```
-# nvme list-ctrl /dev/nvme0
-[   0]:0x41
-[   1]:0x42
+# # nvme id-ctrl /dev/nvme0 | grep ^cntlid
+cntlid    : 0x41
 ```
 We use the one indexed as 0, which is 0x41.
 
