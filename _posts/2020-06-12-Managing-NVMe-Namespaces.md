@@ -72,7 +72,6 @@ We need to know the controller ID of the nvme device
 # # nvme id-ctrl /dev/nvme0 | grep ^cntlid
 cntlid    : 0x41
 ```
-We use the one indexed as 0, which is 0x41.
 
 We need to decide what is the size of the namespace we are going to create. Let us divide 390703446 by 64.
 We get `6104741`, which will be size of one namespace (assuming we create identical 64 namespaces).
