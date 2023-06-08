@@ -33,8 +33,8 @@ do
     echo $i
     echo "nvme create-ns $device --nsze=$per_ns_blocks --ncap=$per_ns_blocks --flbas=0 --dps=0"
     nvme create-ns $device --nsze=$per_ns_blocks --ncap=$per_ns_blocks --flbas=0 --dps=0
-    echo "nvme attach-ns $device --namespace-id=$i --controllers=`nvme list-ctrl $device | grep "0]" | awk -F: '{print $2}'`"
-    nvme attach-ns $device --namespace-id=$i --controllers=`nvme list-ctrl $device | grep "0]" | awk -F: '{print $2}'`
+    echo "nvme attach-ns $device --namespace-id=$i --controllers=`nvme id-ctrl $device | grep ^cntlid | awk '{print $NF}'`"
+    nvme attach-ns $device --namespace-id=$i --controllers=`nvme id-ctrl $device | grep ^cntlid | awk '{print $NF}'`
     sleep 2
     nvme get-log $device -l 200 -i 4
     sleep 2
